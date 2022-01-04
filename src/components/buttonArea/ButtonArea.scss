@@ -1,0 +1,26 @@
+
+.btn{
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-family: $titleFont;
+  border-radius:$bdrRadius;
+  max-width: 172px;
+  width: calc(50% - 8px);
+}
+
+#next{
+    background-color: $mainColor;
+    margin-left: 8px;
+}
+#back{
+    margin-right: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $mainColor;
+    background-color: $backgroundColor;
+    color: white;
+  }

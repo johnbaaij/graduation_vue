@@ -1,0 +1,30 @@
+{
+  "button": {
+    "next": "Next",
+    "back": "Back"
+  },
+  "talentpool": {
+    "title": "Talentpool",
+    "text": "What's your special talent?"
+  },
+  "gear": {
+    "title": "Gear",
+    "text": "What are you adding for {talent}?"
+  },
+  "brand": {
+    "title": "Brand",
+    "text": "Who made your {category}?"
+  },
+  "model": {
+    "title": "Model",
+    "text": "What's the model for your {category}?"
+  },
+  "picture": {
+    "title": "Picture time",
+    "text": "Place your booomtag on your {category}. Don't forget to smile"
+  },
+  "almost": {
+    "title": "(Almost) Protected",
+    "text": "Booom your product is registered"
+  }
+}
