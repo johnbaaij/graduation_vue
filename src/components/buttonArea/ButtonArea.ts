@@ -15,7 +15,7 @@ import { Options, Vue } from 'vue-class-component';
   },
 
   methods: {
-    start():void { this.$store.commit('increment'); },
+    next():void { this.$store.commit('increment'); },
     back():void { this.$store.commit('decrement'); },
 
   },

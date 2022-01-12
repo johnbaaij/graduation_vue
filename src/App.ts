@@ -13,7 +13,7 @@ import Pages from './models/Pages';
 
 
 
-function getDisplay(type:string){
+function getComponentCondition(type:string){
   let i = Object(Pages.screens)[type] 
   return (i)
 }
@@ -22,12 +22,10 @@ function getDisplay(type:string){
 export default defineComponent({
 
   setup(){
-    const store = useStore()
+    const store = useStore();
 
-
-    let onboarding = getDisplay("Talent")
-
-    return {onboarding}
+    return {
+    }
 
   },
     components: {
@@ -51,12 +49,22 @@ export default defineComponent({
     },
 
     computed:{
+
+      showQuickResponseSingle(){
+        return getComponentCondition(this.$store.state.type).showQuickResponseSingle;
+      },
+
+      showQuickResponseMultiple(){
+        return getComponentCondition(this.$store.state.type).showQuickResponseMultiple;
+      },
+
       showTextArea(){
-        return getDisplay(this.$store.state.type).showTextArea;
-      }
+        return getComponentCondition(this.$store.state.type).showTextArea;
+      }, 
 
-
-      
+      showFileInput(){
+        return getComponentCondition(this.$store.state.type).showFileInput;
+      }, 
     }
 });
 
