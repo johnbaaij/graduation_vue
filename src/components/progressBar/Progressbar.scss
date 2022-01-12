@@ -1,0 +1,13 @@
+#bar{
+    width: calc(100vw - $defaultMargin *2);
+    margin-left: $defaultMargin;
+    background-color: white;
+    height: $defaultMargin;
+    border-radius: $bdrRadius;
+}
+
+#prog{
+  height: 100%;
+  background-color: $mainColor;
+  border-radius: $bdrRadius;
+}

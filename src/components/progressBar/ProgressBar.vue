@@ -1,6 +1,8 @@
 <template>
 <div class="progress">
-<progress id="file" v-bind="{ value: this.$store.state.count *10}" max="100"> 32% </progress>
+<div id="bar">
+    <div v-bind:style="{width: width + '%'}" id="prog"></div>
+</div>
 </div>
 </template>
 

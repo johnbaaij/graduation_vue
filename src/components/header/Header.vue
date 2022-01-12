@@ -1,6 +1,9 @@
 <template>
 <div class="header">
     <img class="logo" src="../../../src/assets/white.svg" alt="">
+
+    
+    
 </div>
 </template>
 

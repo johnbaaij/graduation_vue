@@ -1,9 +1,8 @@
 <template>
-<div class="test"></div>
 <div id="textArea">
 
     <h1 class="heading">{{heading}} </h1>
-    <p class="text">{{$t('talentpool.text')}}</p>
+    <p class="text">{{text}}</p>
 </div>
 </template>
 

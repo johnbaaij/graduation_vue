@@ -1,0 +1,29 @@
+.photoButton{
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.photoArea{
+    width:calc(100vw - $defaultMargin *2 );
+    margin-left: $defaultMargin;  
+    border-radius: $bdrRadius;
+    background-color: $secondaryBackgroundColor;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+#photoImage{
+    height: auto;
+    align-self: center;
+    margin: $defaultMargin;
+    max-height: 56px;
+}
+
+input[type="file"] {
+    display: none;
+}

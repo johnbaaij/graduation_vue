@@ -4,7 +4,10 @@ import { createStore, useStore as baseUseStore, Store } from 'vuex';
 
 export interface State {
   count: number,
-  showQuickSelect: boolean
+  showQuickSelect: boolean,
+  type: string,
+  displayPhoto: boolean,
+  page: string
 
 }
 
@@ -17,8 +20,11 @@ export const store = createStore<State>({
   state: {
     count: 1,
     showQuickSelect: true,
+    type:'talent', 
+    displayPhoto: false, 
+    page: ''
   },
-
+  
   mutations: {
     increment(state) {
       // mutate state
@@ -27,11 +33,17 @@ export const store = createStore<State>({
         state.count += 1;
       }
     },
-    flipShowQuickSelect(state) {
-      state.showQuickSelect = !state.showQuickSelect;
+
+    changeScreentype(state){
+
+    },
+
+    decrement(state){
+      if (state.count > 1){
+        state.count -=1;
+      }
     },
   },
-
 });
 
 // define your own `useStore` composition function

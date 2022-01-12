@@ -9,33 +9,46 @@ html,body{
     background-color:$backgroundColor;
     font-family: $mainFont;
 }
-
 #app{
     display: grid;
     grid-template-columns: repeat(auto);
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
     color: white;
-    padding: $defaultMarfin;
-    height: 100%;
+    height: calc(100vh - env(safe-area-inset-bottom)); 
     max-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    align-items: start;
 }
-
 .header{
     grid-column: 1/-1;
     grid-row: 1;
 }
-
 .onboardingText{
     grid-column: 1/-1;
     grid-row: 2;
 }
 
-.btn-area{
+.quickResponseArea{
+    grid-column: 1/-1;
+    grid-row: 3;
+}
+
+.photoAdd{
+    grid-column: 1/-1;
+    grid-row: 3;
+}
+
+.progress{
     grid-column: 1/-1;
     grid-row: 4;
     align-self: end;
+}
 
+.btn-area{
+    grid-column: 1/-1;
+    grid-row: 6;
 }
 
 .fade-enter-active,
@@ -47,6 +60,5 @@ html,body{
 .fade-leave-to {
   opacity: 0;
 }
-
 
 

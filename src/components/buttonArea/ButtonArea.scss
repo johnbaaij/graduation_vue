@@ -1,23 +1,21 @@
-
 .btn{
-  border: none;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1rem;
-  font-family: $titleFont;
-  border-radius:$bdrRadius;
-  max-width: 172px;
-  width: calc(50% - 8px);
+  @include styled_button
+}
+#ButtonArea{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: $defaultMargin;
+  padding-right: $defaultMargin;
 }
 
 #next{
     background-color: $mainColor;
-    margin-left: 8px;
+    margin-left: $halfMargin;
+    color:black;
 }
 #back{
-    margin-right: 8px;
+    margin-right: $halfMargin;
     border-width: 1px;
     border-style: solid;
     border-color: $mainColor;

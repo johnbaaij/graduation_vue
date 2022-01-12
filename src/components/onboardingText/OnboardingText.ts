@@ -63,6 +63,10 @@ const Component = defineComponent({
     heading() {
       return getTitle(this.$store.state.count);
     },
+
+    text() {
+      return getText(this.$store.state.count); 
+    }
   },
 });
 

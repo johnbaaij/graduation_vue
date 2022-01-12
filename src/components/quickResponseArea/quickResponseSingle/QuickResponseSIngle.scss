@@ -1,0 +1,12 @@
+.invisible-radio{
+  display:none
+}
+.selectableArea{
+  @include quick_response
+}
+
+input[type=radio] {
+  &:checked + .selectableArea {
+    background: $mainColor;
+  }
+}
