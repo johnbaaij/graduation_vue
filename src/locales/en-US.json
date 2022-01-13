@@ -26,5 +26,39 @@
   "almost": {
     "title": "(Almost) Protected",
     "text": "Booom your product is registered"
-  }
+  },
+
+  "sports": [
+    {
+      "name": "Kitesurfing",
+      "gear": [{
+          "type": "Wetsuits",
+          "manufacturers": ["Xcel", "Vissla", "Quicksilver", "O'Neil","Patagonia", "Rip Curl", "Sisstrevolution"]
+        }, 
+        {
+          "type": "Boards",
+          "manufacturers": ["Airrush", "Appletree,","Brunotti" ,"Cabrinha", "Carved Kiteboards", "Core kiteboarding", "Duotone Kiteboarding", "F-one","Firewire", "Flysurfer","Kold Shapes", "Lieuwe", "Naish", "North", "Ozone", "Reeding kiteboarding", "Slingshot"]
+        }, 
+        {
+          "type": "Kites",
+          "manufacturers": ["Airrush", "Appletree,","Brunotti" ,"Cabrinha", "Carved Kiteboards", "Core kiteboarding", "Duotone Kiteboarding", "F-one","Firewire", "Flysurfer","Kold Shapes", "Lieuwe", "Naish", "North", "Ozone", "Reeding kiteboarding", "Slingshot"]
+        }
+      ]    
+    },
+    {
+      "name": "Snowboarding",
+      "gear":[]
+    },
+    {
+      "name": "Surfing",
+      "gear":[]
+    },
+    {
+      "name": "Skiing",
+      "gear":[]
+    }
+    
+    
+  ]
+
 }

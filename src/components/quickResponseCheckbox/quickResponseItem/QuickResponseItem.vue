@@ -3,8 +3,8 @@
     <label class="selectableArea" v-bind="{ for: uid}">{{title}}</label>
 </template>
 
-<script src="./QuickResponseMultiple.ts" lang="ts" > </script>
+<script src="./QuickResponseItem.ts" lang="ts" > </script>
 
 <style lang="scss" scoped>
-@import "/src/components/quickResponseArea/quickResponseMultiple/QuickResponseMultiple.scss";
+@import "/src/components/quickResponseCheckbox/quickResponseItem/QuickResponseItem.scss";
 </style>

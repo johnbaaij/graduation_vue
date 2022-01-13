@@ -1,0 +1,10 @@
+.invisible-radio{
+  display:none
+}
+.selectableArea{
+  @include quick_response_item
+}
+
+input[type=radio] {
+  @include quick_response_selected
+}

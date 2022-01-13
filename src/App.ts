@@ -1,15 +1,15 @@
 import { defineComponent, reactive } from 'vue';
 import { useStore } from 'vuex'
+import Pages from './models/Pages';
+
+//vue components 
 import Header from './components/header/Header.vue';
 import ButtonArea from './components/buttonArea/ButtonArea.vue';
 import OnboardingText from './components/onboardingText/OnboardingText.vue';
-import QuickResponseArea from './components/quickResponseArea/QuickResponseArea.vue';
 import ProgressBar from './components/progressBar/ProgressBar.vue';
 import TextInput from './components/textInput/TextInput.vue';
 import FileInput from './components/fileInput/FileInput.vue';
-import {OnboardingScreen} from './models/OnboardingScreen';
-import Pages from './models/Pages';
-
+import QuickResponseCheckbox from './components/quickResponseCheckbox/QuickResponseCheckbox.vue'
 
 
 
@@ -17,7 +17,6 @@ function getComponentCondition(type:string){
   let i = Object(Pages.screens)[type] 
   return (i)
 }
-
 
 export default defineComponent({
 
@@ -32,10 +31,10 @@ export default defineComponent({
       Header,
       ButtonArea,
       OnboardingText,
-      QuickResponseArea,
       ProgressBar,
       TextInput,
-      FileInput
+      FileInput,
+      QuickResponseCheckbox
     },
 
     props: {
@@ -43,7 +42,6 @@ export default defineComponent({
 
     data() {
     },
-
 
     mounted() {
     },

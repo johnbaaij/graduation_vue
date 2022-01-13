@@ -4,4 +4,4 @@ export default class Flows{
         'flow1':  ['talentpool','gear', 'brand', 'model', 'picture']
     }
     
-}
+} 

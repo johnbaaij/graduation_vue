@@ -14,8 +14,6 @@ export interface State {
 
 let array: string [];
 
-
-
 export const key: InjectionKey<Store<State>> = Symbol('');
 
 export const store = createStore<State>({

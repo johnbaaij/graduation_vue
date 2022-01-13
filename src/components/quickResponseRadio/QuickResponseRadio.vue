@@ -10,8 +10,8 @@
 
 </template>
 
-<script src="./QuickResponseArea.ts" lang="ts" > </script>
+<script src="./QuickResponseRadio.ts" lang="ts" > </script>
 
 <style lang="scss" scoped>
-@import "/src/components/quickResponseArea/QuickResponseArea.scss";
+@import "/src/components/quickResponseRadio/QuickResponseRadio.scss";
 </style>
