@@ -10,19 +10,27 @@ import ProgressBar from './components/progressBar/ProgressBar.vue';
 import TextInput from './components/textInput/TextInput.vue';
 import FileInput from './components/fileInput/FileInput.vue';
 import QuickResponseCheckbox from './components/quickResponseCheckbox/QuickResponseCheckbox.vue'
-
-
+import { onboardingService } from './service/onboardingService';
 
 function getComponentCondition(type:string){
   let i = Object(Pages.screens)[type] 
   return (i)
 }
 
+service: onboardingService;
+
+
 export default defineComponent({
+
+  
+
+
 
   setup(){
     const store = useStore();
 
+    const service = new onboardingService();
+    service.insertOnboarding();
     return {
     }
 

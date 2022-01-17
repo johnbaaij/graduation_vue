@@ -42,11 +42,11 @@ const Component = defineComponent({
   
 
     let list: string[] =[]
-    let items = getManufacturers(list, 0);
+    let items = getGear(list, 0);
 
     return {
       count: computed(() => store.state.count),
-      items : getManufacturers(list, 1)
+      items : getGear(list, 1)
     }
 
   },
