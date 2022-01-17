@@ -27,12 +27,7 @@ const getGear = (list: string[], value:number):string[] => {
 //Todo fix this issue 
 const getManufacturers = (list: string[], value:number):string[] => {
 
-  console.log(en_us.sports[0].gear[0].manufacturers);
-
-  for (var i = 0; i < en_us.sports[value].gear[0].manufacturers.length; i++) {
-    let arrayItem = `sports[${0}].gear[${0}].manufacturers[${i}]`;
-      list.push(i18n.global.t(arrayItem))
-  }
+  list = ["Xcel", "Vissla", "Quicksilver", "O'Neil","Patagonia", "Rip Curl", "Sisstrevolution"];
     return list ;
 };
 
