@@ -1,20 +1,30 @@
 import { BaseService } from "./baseService";
 
-export  class onboardingService extends BaseService
+export  class OnboardingService extends BaseService
 {
     constructor(){
         super()
     };
+
+    updateOnboarding(value:any) {
+        return this.connection.update({
+            in: 'onboarding',
+            set: value,
+            where: {
+                id: 1
+            }
+        });
+    }
 
      
 
     insertOnboarding(): void{
 
         let newData = {
-            id:90, //primary key
-            gear:"some other name",
-            brand:"some other address",
-            model:"Joe"
+            id:1, //primary key
+            gear:"",
+            brand:"",
+            model:""
         }
 
         this.connection.insert(

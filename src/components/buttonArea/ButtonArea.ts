@@ -1,24 +1,20 @@
-import { Options, Vue } from 'vue-class-component';
+import { OnboardingController } from '@/controllers/OnboardingController';
+import { defineComponent } from 'vue';
 
-@Options({
 
-  data() {
-    return {
-    };
-  },
-  components: {
+export default defineComponent({
+  setup(){
 
-  },
+    const controller = new OnboardingController();
+    
+    return{
+      controller
 
-  props: {
-
-  },
-
-  methods: {
-    next():void { this.$store.commit('increment'); },
-    back():void { this.$store.commit('decrement'); },
-
+    }
   },
 
+  methods:{
+    next():void {   },
+    back():void { this.$store.commit('decrement') ; },
+  }
 })
-export default class ButtonArea extends Vue {}

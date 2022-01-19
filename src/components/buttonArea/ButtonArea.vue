@@ -1,7 +1,9 @@
 <template>
 <div id="ButtonArea">
     <button type='button' @click="back" class="btn" id="back">{{$t("button.back")}}</button>
-    <button type='button' @click="next" class="btn" id="next">{{$t("button.next")}} </button>
+    <button form="onboardingForm" type='submit' class="btn" id="next">{{$t("button.next")}} </button>
+
+    
 </div>
 </template>
 

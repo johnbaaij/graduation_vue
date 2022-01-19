@@ -1,10 +1,13 @@
 <!-- TODO: https://developer.mozilla.org/en-US/docs/Web/API/FileReader -->
 
 <template>
+
+    <img v-if="url" :src="url" />
+
     <div class="photoArea">
         <label v-if="displayPhoto" class="photoButton">
             <input type="file"
-            accept="image/*">
+            accept="image/*" @change="onFileSelected" >
             <img id="photoImage" class="logo" src="../../../src/assets/white.svg" alt="">
             Choose photo
         </label>

@@ -19,7 +19,8 @@
     margin-left: $defaultMargin;
     border: 0;
     align-content: center;
-    align-items: center;     
+    align-items: center;   
+    margin-right: $defaultMargin;  
 }
 
 @mixin quick_response_item {

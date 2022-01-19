@@ -27,3 +27,12 @@
 input[type="file"] {
     display: none;
 }
+
+img{
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}

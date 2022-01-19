@@ -1,6 +1,5 @@
 <template>
 <div id="textArea">
-
     <h1 class="heading">{{heading}} </h1>
     <p class="text">{{text}}</p>
 </div>

@@ -1,6 +1,10 @@
 import { defineComponent, reactive } from 'vue';
 import { useStore } from 'vuex'
 import Pages from './models/Pages';
+import { OnboardingController } from './controllers/OnboardingController';
+import { Motion, Presence } from "motion/vue"
+
+
 
 //vue components 
 import Header from './components/header/Header.vue';
@@ -10,30 +14,22 @@ import ProgressBar from './components/progressBar/ProgressBar.vue';
 import TextInput from './components/textInput/TextInput.vue';
 import FileInput from './components/fileInput/FileInput.vue';
 import QuickResponseCheckbox from './components/quickResponseCheckbox/QuickResponseCheckbox.vue'
-import { onboardingService } from './service/onboardingService';
+import QuickResponseRadio from './components/quickResponseRadio/QuickResponseRadio.vue';
 
 function getComponentCondition(type:string){
+
   let i = Object(Pages.screens)[type] 
   return (i)
 }
 
-service: onboardingService;
-
-
 export default defineComponent({
-
-  
-
-
-
   setup(){
     const store = useStore();
-
-    const service = new onboardingService();
-    service.insertOnboarding();
+    
+    let uname = document.querySelector("#uname");
     return {
+      
     }
-
   },
     components: {
       Header,
@@ -42,19 +38,39 @@ export default defineComponent({
       ProgressBar,
       TextInput,
       FileInput,
-      QuickResponseCheckbox
+      QuickResponseCheckbox,
+      QuickResponseRadio, 
+      Motion,
+      Presence
     },
 
     props: {
     },
 
     data() {
+
+      return{
+
+      }
+     
     },
 
     mounted() {
     },
 
+    methods:{
+
+      checkForm: function(){
+        this.$store.commit('increment');
+      },
+
+    },
+
     computed:{
+
+      current(){
+        return this.$store.state.count
+      },
 
       showQuickResponseSingle(){
         return getComponentCondition(this.$store.state.type).showQuickResponseSingle;
@@ -71,6 +87,23 @@ export default defineComponent({
       showFileInput(){
         return getComponentCondition(this.$store.state.type).showFileInput;
       }, 
+    }, 
+
+    updated(){
+      let i = Object(Pages.screens)[this.$store.state.type].dataType;
+      this.$store.commit('alterDataType', i)
+    },
+
+    beforeUnmount(){
+      let data = {
+        gear:'test',
+        brand:'test2',
+        model:'test3'
+      }
+      const controller = new OnboardingController();
+      controller.onboardingSafe(data);
+      console.log("this runs");
+
     }
 });
 

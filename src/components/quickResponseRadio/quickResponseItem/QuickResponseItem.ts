@@ -4,6 +4,7 @@ const Component = defineComponent({
 
   components: {
   },
+  
   props: {
     title: String,
   },
@@ -14,6 +15,12 @@ const Component = defineComponent({
   },
   mounted() {
     this.uid = "radio" +  Date.now() * Math.random() ;
+  },
+
+  methods: {
+    updateMessage (e:any) {
+      this.$store.commit('updateOnboardingValue', e.target.value)
+    }
   },
 });
 

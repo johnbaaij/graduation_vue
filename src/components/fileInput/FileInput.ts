@@ -7,11 +7,30 @@ const Component = defineComponent({
   props: {
   },
   data() {
+
+    return {
+      url: ""
+
+    }
   },
   mounted() {
   },
 
+  methods: {
+
+    onFileSelected(event:any): void{
+      const selectedFile = event.target.files[0];
+      this.url = URL.createObjectURL(selectedFile);
+
+
+
+    }
+
+  },
+
   computed:{
+    
+
     displayPhoto(){
       return this.$store.state.displayPhoto
     }, 

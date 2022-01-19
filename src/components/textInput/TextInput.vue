@@ -1,5 +1,6 @@
 <template>
-  <input type="text" class="textField" name="fname">
+  <input v-model="message" type="text" class="textField" name="fname">
+  
 </template>
 
 <script src="./TextInput.ts" lang="ts"> </script>

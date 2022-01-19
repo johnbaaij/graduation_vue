@@ -1,5 +1,5 @@
 <template>
-    <input v-bind="{ id: uid}" type="checkbox" name="checkbox" class="invisible-checkbox">
+    <input @input="updateMessage" v-model="message" :value="title" v-bind="{ id: uid}" type="checkbox" name="checkbox" class="invisible-checkbox">
     <label class="selectableArea" v-bind="{ for: uid}">{{title}}</label>
 </template>
 

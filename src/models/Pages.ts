@@ -6,27 +6,41 @@ export default class Pages{
     static readonly screens = {
         "talentpool" :  reactive<OnboardingScreen>({ 
             showQuickResponseSingle: true, 
-            showTextArea: true }),
+            showTextArea: true,
+            dataType:'talent' 
+        }),
 
         "gear" : reactive<OnboardingScreen>({ 
             showQuickResponseSingle: true, 
-            showTextArea: false }), 
+            showTextArea: true,
+            dataType:'gear'
+         }), 
 
         "brand" : reactive<OnboardingScreen>({ 
             showQuickResponseSingle: true, 
-            showTextArea: false }), 
+            showTextArea: true,
+
+            dataType: 'brand'
+        }), 
 
         "model" : reactive<OnboardingScreen>({ 
             showQuickResponseSingle: true, 
-            showTextArea: false }), 
+            showTextArea: true,
+            dataType: 'model'
+        }), 
 
         "picture" : reactive<OnboardingScreen>({ 
-            showQuickResponseSingle: true, 
-            showFileInput: true }), 
+            showFileInput: true,
+            dataType: null
+        }), 
 
         "empty" : reactive<OnboardingScreen>({ 
-            showQuickResponseSingle: true, 
-            showTextArea: false }), 
+            dataType: null
+         }), 
+
+        "almost" : reactive<OnboardingScreen>({ 
+            dataType: null
+        }), 
         
     };
 

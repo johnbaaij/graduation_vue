@@ -2,10 +2,7 @@ import { computed, defineComponent } from 'vue';
 import QuickResponseItem from './quickResponseItem/QuickResponseItem.vue';
 import i18n from '@/i18n';
 import en_us from '../../locales/en-US.json';
-import { Store, useStore } from 'vuex';
-
-
-
+import {  useStore } from 'vuex';
 
 
 const getSports = (list: string[]):string[] => {
@@ -39,8 +36,6 @@ const Component = defineComponent({
 
     const store = useStore();
 
-  
-
     let list: string[] =[]
     let items = getGear(list, 0);
 
@@ -63,6 +58,7 @@ const Component = defineComponent({
   },
 
   computed: {
+
   },
 });
 

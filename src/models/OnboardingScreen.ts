@@ -1,7 +1,10 @@
+type Datatype = 'gear' | 'brand' | 'talent' | 'model' | null;
+type ShowComponent = true;
+
 export interface OnboardingScreen {
-    showQuickResponseSingle?: boolean;
-    showQuickResponseMultiple?: boolean; 
-    showTextArea?: boolean; 
-    showFileInput?:boolean;
-    key?: string;
+    showQuickResponseSingle?: ShowComponent;
+    showQuickResponseMultiple?: ShowComponent; 
+    showTextArea?: ShowComponent; 
+    showFileInput?:ShowComponent;
+    dataType:Datatype;
 }

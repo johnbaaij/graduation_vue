@@ -12,6 +12,17 @@ const Component = defineComponent({
       uid: "",
     };
   },
+
+  computed: {
+
+  },
+
+  methods: {
+    updateMessage (e:any) {
+      this.$store.commit('updateOnboardingValue', e.target.value)
+    }
+  },
+  
   mounted() {
     this.uid = "checkbox" +  Date.now() * Math.random() ;
   },

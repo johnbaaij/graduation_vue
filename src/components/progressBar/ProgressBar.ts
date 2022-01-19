@@ -1,4 +1,5 @@
 
+import Flows from '@/models/Flows';
 import { defineComponent } from 'vue';
 
 const Component = defineComponent({
@@ -15,7 +16,9 @@ const Component = defineComponent({
 
   computed: {
     width(){
-      return this.$store.state.count * 16.7;
+
+      let number = 100  / (Flows.items.flow1.length);
+      return (this.$store.state.count +1) * number;
     }
 
   },

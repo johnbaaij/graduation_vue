@@ -9,7 +9,13 @@ export interface State {
   type: string,
   displayPhoto: boolean,
   selectedFlow:string,
-  flowInitiated:boolean
+  flowInitiated:boolean,
+  generalOnboarding:{
+    gear:string,
+    brand:string,
+    model:string
+  },
+  dataType:string
 }
 
 let array: string [];
@@ -26,7 +32,13 @@ export const store = createStore<State>({
     type:'talentpool', 
     displayPhoto: true, 
     selectedFlow: 'flow1',
-    flowInitiated: false
+    flowInitiated: false,
+    generalOnboarding:{
+      gear:'',
+      brand:'',
+      model:''
+    },
+    dataType:'brand'
   },
   
   mutations: {
@@ -48,6 +60,33 @@ export const store = createStore<State>({
       }
 
     },
+
+    updateOnboardingValue(state, payload:string){
+
+      switch(state.dataType) { 
+        case 'gear': { 
+          state.generalOnboarding.gear = payload;
+          break; 
+        } 
+        case 'model': { 
+          state.generalOnboarding.model = payload;
+           break; 
+        }
+        case 'brand': { 
+          state.generalOnboarding.brand = payload;
+          break; 
+       } 
+        default: { 
+           //statements; 
+           break; 
+        } 
+     }
+
+    }, 
+
+    alterDataType(state, payload:string):void{
+      state.dataType = payload;
+    }
   },
 });
 
