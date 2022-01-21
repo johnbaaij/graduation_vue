@@ -1,5 +1,5 @@
 import { reactive } from "vue";
-import { OnboardingScreen } from "./OnboardingScreen";
+import { OnboardingScreen } from "./interfaces/OnboardingScreen";
 
 export default class Pages{
 
@@ -41,6 +41,35 @@ export default class Pages{
         "almost" : reactive<OnboardingScreen>({ 
             dataType: null
         }), 
+
+        "size" : reactive<OnboardingScreen>({ 
+            showTextArea: true,
+            dataType: 'size'
+        }), 
+
+        "year" : reactive<OnboardingScreen>({ 
+            dataType: "year"
+        }), 
+
+        "serial" : reactive<OnboardingScreen>({ 
+            showTextArea: true,
+            dataType: "serial"
+        }), 
+
+        "receipt" : reactive<OnboardingScreen>({ 
+            showFileInput: true,
+            dataType: null
+        }), 
+
+        "notes" : reactive<OnboardingScreen>({ 
+            dataType: 'notes'
+        }), 
+
+        "done" : reactive<OnboardingScreen>({ 
+            dataType: null
+        }), 
+
+        
         
     };
 

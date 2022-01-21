@@ -2,20 +2,19 @@
 import { InjectionKey } from 'vue';
 import { createStore, useStore as baseUseStore, Store } from 'vuex';
 import Flows from './models/Flows';
+import { Tag } from './models/interfaces/Tag';
+import { Datatype, Flow } from './models/Types';
 
 export interface State {
   count: number,
   showQuickSelect: boolean,
   type: string,
   displayPhoto: boolean,
-  selectedFlow:string,
+  selectedFlow:Flow,
   flowInitiated:boolean,
-  generalOnboarding:{
-    gear:string,
-    brand:string,
-    model:string
-  },
-  dataType:string
+  tag:Tag,
+  dataType:Datatype, 
+    quickSelectOptions:string[], 
 }
 
 let array: string [];
@@ -24,26 +23,28 @@ export const key: InjectionKey<Store<State>> = Symbol('');
 
 export const store = createStore<State>({
 
-  strict: true,
-
   state: {
     count: 0 ,
     showQuickSelect: true,
-    type:'talentpool', 
+    type:`talentpool`, 
     displayPhoto: true, 
-    selectedFlow: 'flow1',
+    selectedFlow: 'basicFlow',
     flowInitiated: false,
-    generalOnboarding:{
+    tag:{
+      talent:'',
       gear:'',
       brand:'',
-      model:''
+      model:'',
+      uid:'04702A22717180',
     },
-    dataType:'brand'
+    dataType:'brand', 
+    quickSelectOptions:[],
+    
   },
   
   mutations: {
 
-    increment(state) {
+    increment(state): void {
       array = Object(Flows.items)[state.selectedFlow];
 
       if (state.count < array.length -1 ){
@@ -52,7 +53,7 @@ export const store = createStore<State>({
       }  
     },
 
-    decrement(state){
+    decrement(state): void{
 
       if (state.count != 0){
         state.count = state.count -1;
@@ -61,19 +62,24 @@ export const store = createStore<State>({
 
     },
 
+    addOption(state, payload:string[]): void{
+      console.log(payload)
+        state.quickSelectOptions = payload;
+    },
+
     updateOnboardingValue(state, payload:string){
 
       switch(state.dataType) { 
         case 'gear': { 
-          state.generalOnboarding.gear = payload;
+          state.tag.gear = payload;
           break; 
         } 
         case 'model': { 
-          state.generalOnboarding.model = payload;
+          state.tag.model = payload;
            break; 
         }
         case 'brand': { 
-          state.generalOnboarding.brand = payload;
+          state.tag.brand = payload;
           break; 
        } 
         default: { 
@@ -81,10 +87,9 @@ export const store = createStore<State>({
            break; 
         } 
      }
-
     }, 
 
-    alterDataType(state, payload:string):void{
+    alterDataType(state, payload:Datatype):void{
       state.dataType = payload;
     }
   },

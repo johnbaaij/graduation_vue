@@ -3,6 +3,7 @@ import QuickResponseItem from './quickResponseItem/QuickResponseItem.vue';
 import i18n from '@/i18n';
 import en_us from '../../locales/en-US.json';
 import {  useStore } from 'vuex';
+import { getPokemon } from '@/controllers/TestApi';
 
 function getSports(list: string[]):string[] {
   for (var i = 0; i < en_us.sports.length; i++) {
@@ -74,11 +75,11 @@ const Component = defineComponent({
           break
         }
         case 'gear':{
-          list = this.scubaGearlist;
+          list = this.$store.state.quickSelectOptions
           break
         }
         case 'brand':{
-          list = this.scubaBrands;
+          getPokemon();
           break
         }
         case 'model':{

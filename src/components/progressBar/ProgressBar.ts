@@ -17,7 +17,7 @@ const Component = defineComponent({
   computed: {
     width(){
 
-      let number = 100  / (Flows.items.flow1.length);
+      let number = 100  / (Flows.items.basicFlow.length);
       return (this.$store.state.count +1) * number;
     }
 

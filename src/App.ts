@@ -15,6 +15,7 @@ import TextInput from './components/textInput/TextInput.vue';
 import FileInput from './components/fileInput/FileInput.vue';
 import QuickResponseCheckbox from './components/quickResponseCheckbox/QuickResponseCheckbox.vue'
 import QuickResponseRadio from './components/quickResponseRadio/QuickResponseRadio.vue';
+import YearInput from './components/yearInput/YearInput.vue';
 
 function getComponentCondition(type:string){
 
@@ -25,7 +26,7 @@ function getComponentCondition(type:string){
 export default defineComponent({
   setup(){
     const store = useStore();
-    
+
     let uname = document.querySelector("#uname");
     return {
       
@@ -41,7 +42,8 @@ export default defineComponent({
       QuickResponseCheckbox,
       QuickResponseRadio, 
       Motion,
-      Presence
+      Presence,
+      YearInput
     },
 
     props: {

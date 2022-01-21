@@ -1,35 +1,35 @@
-@import "./style/normalize.css";
+//@import "./style/normalize.css";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto&display=swap');
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0;    
+    overflow-x: hidden;
 }
 
 html,body{
     background-color:$backgroundColor;
     font-family: $mainFont;
-    overflow-x: hidden;
 }
-#app{
+
+#app{ 
     display: grid;
     grid-template-columns: repeat(auto);
     gap: $defaultMargin;
-    grid-template-rows: auto auto 200px auto auto auto;
+    grid-template-rows: auto auto 3fr auto 1fr;
     grid-auto-rows: minmax(min-content, max-content);
+    justify-items: stretch;
     color: white;
-    height: calc(100vh - env(safe-area-inset-bottom)); 
-    //height: 100vh;
-    max-width: 100vw;
-    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: env(safe-area-inset-bottom);
     margin: 0;
     align-items: start;
     grid-template-areas: 
     "header"
     "onboardingText"
     "inputContent"
-    "photoLocation"
     "progress"
-    "btn-area"
+    "btn-area";
 }
 .header{
     grid-area: header;
@@ -44,7 +44,7 @@ html,body{
 }
 
 .fileInput{
-    grid-area: photoLocation;
+    grid-area: inputContent;
 
 }
 
@@ -55,8 +55,7 @@ html,body{
 
 .btn-area{
     grid-area:btn-area;
-    padding-bottom:env(safe-area-insert-bottom);
-    padding-bottom: 64px;
+    
 }
 
 .space{
@@ -67,6 +66,22 @@ html,body{
 .textInput{
     margin: calc($defaultMargin * 3);
 }
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+    transition: all 0.3s ease-out;
+  }
+  
+  .slide-fade-leave-active {
+    transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+  }
+  
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translateX(20px);
+    opacity: 0;
+  }
 
 
 

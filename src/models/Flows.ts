@@ -1,7 +1,10 @@
 export default class Flows{
 
     static readonly items ={
-        'flow1':  ['talentpool','gear', 'brand', 'model', 'picture', 'almost']
+        'basicFlow':  ['talentpool','gear', 'brand', 'model', 'picture', 'almost'],
+        'newProfile': [],
+        'extendedFlow':['size', 'year', 'serial', 'receipt', 'notes', 'done'], 
+        'ice' :[]
     }
     
 } 

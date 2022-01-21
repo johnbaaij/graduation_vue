@@ -1,5 +1,4 @@
-type Datatype = 'gear' | 'brand' | 'talent' | 'model' | null;
-type ShowComponent = true;
+import { Datatype, ShowComponent } from "../Types";
 
 export interface OnboardingScreen {
     showQuickResponseSingle?: ShowComponent;
