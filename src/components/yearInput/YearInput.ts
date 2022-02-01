@@ -1,37 +1,35 @@
-import { defineComponent, ref, computed, watch } from 'vue';
-import { useStore } from 'vuex'
-
+import {
+  defineComponent,
+} from 'vue';
 
 export default defineComponent({
   setup() {
+    const currentYear = new Date().getFullYear();
+    const earliestYear = 1990;
+    const items:string[] = [];
 
-    let currentYear = new Date().getFullYear();  
-    let earliestYear = 1990;    
-    let items:string[] =[]
-    
-    for (let i = earliestYear; i <= currentYear; i++) {
-        items.push(i.toString())
+    for (let i = earliestYear; i <= currentYear; i += 1) {
+      items.push(i.toString());
     }
     return {
-        items :items.reverse()
-    }
+      items: items.reverse(),
+    };
   },
 
-  data(){
-
-    return{
-    }
+  data() {
+    return {
+    };
   },
 
-  methods:{
-    
-  }, 
+  methods: {
 
-  watch:{
+  },
+
+  watch: {
 
   },
 
   computed: {
-      
-}
-})
+
+  },
+});

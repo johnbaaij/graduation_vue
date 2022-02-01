@@ -13,8 +13,8 @@ export interface State {
   selectedFlow:Flow,
   flowInitiated:boolean,
   tag:Tag,
-  dataType:Datatype, 
-    quickSelectOptions:string[], 
+  dataType:Datatype,
+    quickSelectOptions:string[],
 }
 
 let array: string [];
@@ -24,74 +24,71 @@ export const key: InjectionKey<Store<State>> = Symbol('');
 export const store = createStore<State>({
 
   state: {
-    count: 0 ,
+    count: 0,
     showQuickSelect: true,
-    type:`talentpool`, 
-    displayPhoto: true, 
+    type: 'talentpool',
+    displayPhoto: true,
     selectedFlow: 'basicFlow',
     flowInitiated: false,
-    tag:{
-      talent:'',
-      gear:'',
-      brand:'',
-      model:'',
-      uid:'04702A22717180',
+    tag: {
+      talent: '',
+      gear: '',
+      brand: '',
+      model: '',
+      uid: '04702A22717180',
     },
-    dataType:'brand', 
-    quickSelectOptions:[],
-    
+    dataType: 'brand',
+    quickSelectOptions: [],
+
   },
-  
+
   mutations: {
 
     increment(state): void {
       array = Object(Flows.items)[state.selectedFlow];
 
-      if (state.count < array.length -1 ){
-        state.count = state.count +1;
+      if (state.count < array.length - 1) {
+        state.count += 1;
         state.type = array[state.count];
-      }  
+      }
     },
 
     decrement(state): void{
-
-      if (state.count != 0){
-        state.count = state.count -1;
+      if (state.count !== 0) {
+        state.count -= 1;
         state.type = array[state.count];
       }
-
     },
 
     addOption(state, payload:string[]): void{
-      console.log(payload)
-        state.quickSelectOptions = payload;
+      console.log(payload);
+      state.quickSelectOptions = payload;
     },
 
-    updateOnboardingValue(state, payload:string){
-
-      switch(state.dataType) { 
-        case 'gear': { 
+    updateOnboardingValue(state, payload:string) {
+      switch (state.dataType) {
+        case 'gear': {
           state.tag.gear = payload;
-          break; 
-        } 
-        case 'model': { 
-          state.tag.model = payload;
-           break; 
+          break;
         }
-        case 'brand': { 
+        case 'model': {
+          state.tag.model = payload;
+          break;
+        }
+        case 'brand': {
           state.tag.brand = payload;
-          break; 
-       } 
-        default: { 
-           //statements; 
-           break; 
-        } 
-     }
-    }, 
+          break;
+        }
+        default: {
+          // statements;
+          break;
+        }
+      }
+    },
 
     alterDataType(state, payload:Datatype):void{
       state.dataType = payload;
-    }
+    },
   },
 });
 

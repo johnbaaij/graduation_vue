@@ -1,7 +1,7 @@
-import i18n from "@/i18n";
-import TranslatableItemsInterface from "./interfaces/TranslatableItemsInterface";
+import i18n from '@/i18n';
+import TranslatableItemsInterface from './interfaces/TranslatableItemsInterface';
 
-export const titles:TranslatableItemsInterface ={
+const titles:TranslatableItemsInterface = {
   talentpool: i18n.global.t('talentpool.title'),
   gear: i18n.global.t('gear.title'),
   brand: i18n.global.t('brand.title'),
@@ -14,5 +14,6 @@ export const titles:TranslatableItemsInterface ={
   receipt: i18n.global.t('receipt.title'),
   notes: i18n.global.t('notes.title'),
   done: i18n.global.t('done.title'),
-}
+};
 
+export default titles;

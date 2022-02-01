@@ -1,9 +1,10 @@
-import { idbCon, initJsStore } from "./jsstore_con";
+import { idbCon } from './jsstore_con';
 
-export class BaseService {
-
-    get connection() {
-        return idbCon;
-    }
-
+class BaseService {
+  // eslint-disable-next-line class-methods-use-this
+  get connection():any {
+    return idbCon;
+  }
 }
+
+export default BaseService;

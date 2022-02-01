@@ -7,13 +7,10 @@ const Component = defineComponent({
   props: {
   },
   data() {
-
     return {
-      url: ""
+      url: '',
 
-    }
-  },
-  mounted() {
+    };
   },
 
   methods: {
@@ -21,24 +18,20 @@ const Component = defineComponent({
     onFileSelected(event:any): void{
       const selectedFile = event.target.files[0];
       this.url = URL.createObjectURL(selectedFile);
-
-
-
-    }
+    },
 
   },
 
-  computed:{
-    
+  computed: {
 
-    displayPhoto(){
-      return this.$store.state.displayPhoto
-    }, 
+    displayPhoto() {
+      return this.$store.state.displayPhoto;
+    },
 
-    displayFile(){
-      return this.$store.state.displayFile
-    }
-  }
+    displayFile() {
+      return this.$store.state.displayFile;
+    },
+  },
 });
 
 export default Component;
