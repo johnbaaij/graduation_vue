@@ -23,6 +23,10 @@
     margin-right: $defaultMargin;  
 }
 
+@mixin invisible_radio{
+    display: none;
+}
+
 @mixin quick_response_item {
     color: black;
     cursor:pointer;

@@ -1,7 +1,9 @@
-import { defineComponent } from 'vue';
+import { defineComponent, onMounted } from 'vue';
 import { Motion, Presence } from 'motion/vue';
+import { useStore } from 'vuex';
 import Pages from './models/Pages';
 import OnboardingController from './controllers/OnboardingController';
+import { buttonEventClick } from './controllers/FlowSwitcher';
 
 // vue components
 import Header from './components/header/Header.vue';
@@ -13,7 +15,9 @@ import FileInput from './components/fileInput/FileInput.vue';
 import QuickResponseCheckbox from './components/quickResponseCheckbox/QuickResponseCheckbox.vue';
 import QuickResponseRadio from './components/quickResponseRadio/QuickResponseRadio.vue';
 import YearInput from './components/yearInput/YearInput.vue';
-import getUser from './controllers/TestApi';
+import ItemSelector from './components/itemSelector/Itemselector.vue';
+import TextInputMulti from './components/textInputMulti/TextInputMulti.vue';
+// eslint-disable-next-line import/no-named-as-default
 
 function getComponentCondition(type:string) {
   const i = Object(Pages.screens)[type];
@@ -22,8 +26,10 @@ function getComponentCondition(type:string) {
 
 export default defineComponent({
   setup() {
-    getUser();
+    const store = useStore();
+
     return {
+      flowSelect: () => store.commit('setPage'),
 
     };
   },
@@ -39,6 +45,8 @@ export default defineComponent({
     Motion,
     Presence,
     YearInput,
+    ItemSelector,
+    TextInputMulti,
   },
 
   props: {
@@ -53,7 +61,11 @@ export default defineComponent({
   methods: {
 
     checkForm() {
-      this.$store.commit('increment');
+      // this.$store.commit('increment');
+      buttonEventClick();
+    },
+    setFlow() {
+      this.$store.commit('setPage');
     },
 
   },
@@ -79,9 +91,21 @@ export default defineComponent({
     showFileInput() {
       return getComponentCondition(this.$store.state.type).showFileInput;
     },
+
+    showItemSelector() {
+      return getComponentCondition(this.$store.state.type).showItemSelector;
+    },
+
+    showTextInputMulti() {
+      return getComponentCondition(this.$store.state.type).showTextInputMulti;
+    },
   },
 
   updated() {
+    if (typeof Object(Pages.screens)[this.$store.state.type].buttonClick !== 'undefined') {
+      console.log('this is undefined');
+    }
+
     const i = Object(Pages.screens)[this.$store.state.type].dataType;
     this.$store.commit('alterDataType', i);
   },

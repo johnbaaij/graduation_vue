@@ -1,6 +1,6 @@
 .textField{
     height: 50px;
-    width: calc(100vw - $defaultMargin * 2);
+    width: $fullWidth;
     border: none;
     margin-left: $defaultMargin;
     margin-right: $defaultMargin;

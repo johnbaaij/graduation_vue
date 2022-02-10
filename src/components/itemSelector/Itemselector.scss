@@ -1,0 +1,23 @@
+.invisible-radio{
+    @include invisible_radio
+  
+}
+
+.selectableArea{
+    @include quick_response_item;
+    width: $fullWidth;
+    max-width: $fullWidth;
+    margin-right: $defaultMargin;
+    margin-left: $defaultMargin;
+    border-radius: $bdrRadius;
+    padding: 0;
+    height: 150px;
+    display: grid;
+}
+  
+input[type=radio] {
+    @include quick_response_selected
+}
+
+.wrapper{
+}

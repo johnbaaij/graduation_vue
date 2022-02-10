@@ -1,18 +1,9 @@
 <template>
-  <input   placeholder="Type here..." v-model="searchTerm" type="text" class="textField" name="fname">
-
-  <ul>
-  
-  <li
-    v-for="country in searchCountries"
-    :key="country">
-  </li>
-</ul>
-  
+<textarea rows = "5" cols = "60" placeholder = "Enter details here..." name = "description">  </textarea>
 </template>
 
-<script src="./TextInput.ts" lang="ts"> </script>
+<script src="./TextInputMulti.ts" lang="ts"> </script>
 
 <style lang="scss" scoped>
-@import "/src/components/textInput/TextInput.scss";
+@import "/src/components/textInputMulti/TextInputMulti.scss";
 </style>

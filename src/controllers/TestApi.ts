@@ -1,18 +1,20 @@
-import axios, { AxiosRequestConfig, AxiosPromise } from 'axios';
+import axios, { AxiosResponse } from 'axios';
+import Gear from '@/models/interfaces/Gear.interface';
 
-const config = {
-  method: 'get',
-  url: 'https://pokeapi.co/api/v2/type/3',
-  headers: { },
+const instance = axios.create({
+  baseURL: 'http://johnbaaij.nl:3000/gear/',
+  timeout: 15000,
+});
+
+const responseBody = (response: AxiosResponse) => response.data;
+
+const requests = {
+  get: (url: string) => instance.get(url).then(responseBody),
 };
 
-const getUser = async () => {
-  try {
-    const response = await axios.get(config.url);
-    console.log(response.data.moves[1].name);
-  } catch (error) {
-    console.error(error);
-  }
+const Gear = {
+  getGear: async (): Promise<Gear[]> => requests.get('scubapro'),
+  getModels: (talent: string, type:string, brand:string): Promise<Gear[]> => requests.get(`${talent}/${type}/${brand}`),
 };
 
-export default getUser;
+export default Gear;

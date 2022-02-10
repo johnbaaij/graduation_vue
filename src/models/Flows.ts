@@ -1,8 +1,14 @@
+const basicFlowEntry = ['talentpool', 'gear'];
+
 export default class Flows {
     static readonly items ={
-      basicFlow: ['talentpool', 'gear', 'brand', 'model', 'picture', 'almost'],
+      beginningFlow: ['itemSelection'],
+      // basicFlow's
+      basicFlow: basicFlowEntry.concat(['brand', 'model', 'picture', 'almost']),
+      scubaCylinder: basicFlowEntry.concat(['size', 'almost']),
       newProfile: [],
       extendedFlow: ['size', 'year', 'serial', 'receipt', 'notes', 'done'],
-      ice: [],
+      sosContact: ['sosRelation', 'sosPhone'],
+      generalFlow: ['generalItems', 'notes', 'done'],
     }
 }

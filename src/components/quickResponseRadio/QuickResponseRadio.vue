@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <QuickResponseItem  v-for="item in items" :key="item" :title ="item"></QuickResponseItem>
+        <QuickResponseItem  v-for="item in items.data" :key="item" :title ="item "></QuickResponseItem>
     </div>
 </template>
 

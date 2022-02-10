@@ -1,8 +1,14 @@
 import { reactive } from 'vue';
-import { OnboardingScreen } from './interfaces/OnboardingScreen';
+import { OnboardingScreen } from './interfaces/OnboardingScreen.interface';
 
 export default class Pages {
     static readonly screens = {
+
+      itemSelection: reactive<OnboardingScreen>({
+        dataType: null,
+        showItemSelector: true,
+      }),
+
       talentpool: reactive<OnboardingScreen>({
         showQuickResponseSingle: true,
         showTextArea: true,
@@ -62,11 +68,31 @@ export default class Pages {
 
       notes: reactive<OnboardingScreen>({
         dataType: 'notes',
+        showTextInputMulti: true,
+      }),
+
+      generalItems: reactive<OnboardingScreen>({
+        dataType: null,
+        showQuickResponseSingle: true,
+        showTextArea: true,
+      }),
+
+      sosRelation: reactive<OnboardingScreen>({
+        dataType: null,
+        showQuickResponseSingle: true,
+        showTextArea: true,
+      }),
+
+      sosPhone: reactive<OnboardingScreen>({
+        dataType: null,
       }),
 
       done: reactive<OnboardingScreen>({
         dataType: null,
       }),
 
+      final: reactive<OnboardingScreen>({
+        dataType: null,
+      }),
     };
 }

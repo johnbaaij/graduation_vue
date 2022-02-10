@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable semi */
 export default interface TranslatableItemsInterface {
+    itemSelection: any,
     talentpool: any,
     gear: any,
     brand: any,
@@ -11,6 +12,10 @@ export default interface TranslatableItemsInterface {
     year: any,
     size: any,
     receipt: any,
+    generalItems:any,
     notes: any,
-    done: any
+    sosPhone:any,
+    sosRelation:any,
+    done: any,
+    final: any
 }

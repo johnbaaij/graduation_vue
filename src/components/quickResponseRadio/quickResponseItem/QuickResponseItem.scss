@@ -1,5 +1,5 @@
 .invisible-radio{
-  display:none
+  @include invisible_radio
 }
 .selectableArea{
   @include quick_response_item

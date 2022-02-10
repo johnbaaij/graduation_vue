@@ -119,6 +119,7 @@
     "title": "Receipt"
   },
   "notes": {
-    "title": "Notes"
+    "title": "Notes",
+    "text": "Anything you'll like to add?"
   }
 }

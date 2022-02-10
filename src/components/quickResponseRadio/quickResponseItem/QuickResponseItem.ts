@@ -4,23 +4,23 @@ const Component = defineComponent({
 
   components: {
   },
-  
+
   props: {
     title: String,
   },
   data() {
     return {
-      uid: "",
+      uid: '',
     };
   },
   mounted() {
-    this.uid = "radio" +  Date.now() * Math.random() ;
+    this.uid = `radio${Date.now() * Math.random()}`;
   },
 
   methods: {
-    updateMessage (e:any) {
-      this.$store.commit('updateOnboardingValue', e.target.value)
-    }
+    updateMessage(e:any) {
+      this.$store.commit('updateOnboardingValue', e.target.value);
+    },
   },
 });
 
