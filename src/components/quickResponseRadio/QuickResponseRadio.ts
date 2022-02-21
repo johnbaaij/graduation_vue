@@ -4,7 +4,7 @@ import {
 import { useStore } from 'vuex';
 import QuickResponseItem from './quickResponseItem/QuickResponseItem.vue';
 // eslint-disable-next-line camelcase
-import Gear from '@/controllers/TestApi';
+import Gear from '@/controllers/ApiCalls';
 
 const Component = defineComponent({
 

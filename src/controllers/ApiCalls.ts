@@ -13,8 +13,12 @@ const requests = {
 };
 
 const Gear = {
+
+  // SELECT DISTINCT type FROM `gear` WHERE sport = 'scuba diving'
   getGear: async (): Promise<Gear[]> => requests.get('scubapro'),
-  getModels: (talent: string, type:string, brand:string): Promise<Gear[]> => requests.get(`${talent}/${type}/${brand}`),
+  getModels: async (talent: string, type:string, brand:string): Promise<Gear[]> => requests.get(`${talent}/${type}/${brand}`),
+  // http://johnbaaij.nl:3000/brand/kite%20surfing/kiteboard
+  getBrands: async (talent: string, type:string): Promise<Gear[]> => requests.get(`${talent}/${type}`),
 };
 
 export default Gear;
