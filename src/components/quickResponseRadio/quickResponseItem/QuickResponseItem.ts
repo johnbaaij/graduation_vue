@@ -6,11 +6,12 @@ const Component = defineComponent({
   },
 
   props: {
-    title: String,
+    title: Object,
   },
   data() {
     return {
       uid: '',
+      test: this.title,
     };
   },
   mounted() {
@@ -19,7 +20,11 @@ const Component = defineComponent({
 
   methods: {
     updateMessage(e:any) {
-      this.$store.commit('updateOnboardingValue', e.target.value);
+      if (this.title?.flow !== undefined) {
+        this.$store.commit('setNextFlow', this.title?.flow);
+        this.$store.commit('changeButtonEvent', this.title?.flow);
+      }
+      this.$store.commit('updateOnboardingValue', this.title?.item);
     },
   },
 });

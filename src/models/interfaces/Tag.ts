@@ -1,7 +1,7 @@
 export interface Tag{
-    talent:string,
-    gear:string,
-    brand:string,
-    model:string,
+    talent:string | undefined,
+    gear:string | undefined,
+    brand:string | undefined,
+    model:string | undefined,
     uid:string,
 }

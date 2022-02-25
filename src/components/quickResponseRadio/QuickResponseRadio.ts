@@ -3,8 +3,6 @@ import {
 } from 'vue';
 import { useStore } from 'vuex';
 import QuickResponseItem from './quickResponseItem/QuickResponseItem.vue';
-// eslint-disable-next-line camelcase
-import Gear from '@/controllers/ApiCalls';
 
 const Component = defineComponent({
 
@@ -23,7 +21,6 @@ const Component = defineComponent({
   data() {
     return {
       elements: [],
-      variable: '',
     };
   },
   components: {
@@ -34,49 +31,14 @@ const Component = defineComponent({
   },
 
   methods: {
-    getApiData() {
-      Gear.getModels('scuba diving', 'bcd', 'mares')
-        .then((data) => {
-          this.$store.commit('changeApiResult', data);
-          return data;
-        });
-    },
+
   },
 
-  async mounted() {
-    console.log(this.variable);
-  },
-
-  async created() {
-    this.getApiData();
-  },
   computed: {
 
     items() {
       let list = [];
-
-      switch (this.$store.state.type) {
-        case 'talentpool': {
-          list = this.$store.state.apiResults;
-          break;
-        }
-        case 'gear': {
-          list = this.$store.state.quickSelectOptions;
-          break;
-        }
-        case 'brand': {
-          // getPokemon();
-          break;
-        }
-        case 'model': {
-          // list = this.bcds;
-          break;
-        }
-
-        default: {
-          break;
-        }
-      }
+      list = this.$store.state.quickSelectOptions;
       return list;
     },
 

@@ -1,5 +1,5 @@
 <template>
-  <input   placeholder="Type here..." v-model="searchTerm" type="text" class="textField" name="fname">
+  <input autocomplete="off" placeholder="Type here..." v-model="searchTerm" type="text" class="textField" name="fname">
 
   <ul>
   <li

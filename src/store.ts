@@ -1,6 +1,7 @@
 // store.ts
 import { InjectionKey } from 'vue';
 import { createStore, useStore as baseUseStore, Store } from 'vuex';
+import Calls from './controllers/ApiCalls';
 import Flows from './models/Flows';
 import Gear from './models/interfaces/Gear.interface';
 import { Tag } from './models/interfaces/Tag';
@@ -11,6 +12,23 @@ interface ButtonEvent {
   payload: Flow
 }
 
+function changeApi(state:any) {
+  let returnable;
+
+  Calls.getRequest({
+    category: state.category,
+    sport: state.tag.talent,
+    brand: state.tag.brand,
+    type: state.tag.gear,
+    model: state.tag.model,
+  }).then((data) => {
+    state.apiResults = data;
+    //  state.quickSelectOptions = data.data?.map(({ item }) => item);
+    state.quickSelectOptions = data.data;
+  });
+  return returnable;
+}
+
 export interface State {
   count: number,
   showQuickSelect: boolean,
@@ -19,8 +37,10 @@ export interface State {
   selectedFlow:Flow,
   tag:Tag,
   dataType:Datatype,
+  category:string,
   flowArray:Flow[],
-  apiResults:Gear[],
+  apiResults:Gear,
+  quickSelectOptions:any,
   buttonEvent:ButtonEvent,
   nextFlow:Flow
 }
@@ -38,24 +58,22 @@ export const store = createStore<State>({
     selectedFlow: 'extendedFlow',
     type: Object(Flows.items).beginningFlow[0],
     tag: {
-      talent: '',
-      gear: '',
-      brand: '',
-      model: '',
+      talent: undefined,
+      gear: undefined,
+      brand: undefined,
+      model: undefined,
       uid: '04702A22717180',
     },
-    dataType: null,
+    dataType: 'talent',
+    category: '',
     flowArray: Object(Flows.items).beginningFlow,
-    apiResults: [],
+    apiResults: {},
+    quickSelectOptions: [],
     buttonEvent: { state: true, payload: '' },
     nextFlow: 'basicFlow',
   },
 
   mutations: {
-    changeApiResult(state, payload:any):void {
-      state.apiResults = payload;
-    },
-
     increment(state): void {
       const i = state.selectedFlow;
       array = state.flowArray;
@@ -63,6 +81,11 @@ export const store = createStore<State>({
         state.count += 1;
         state.type = array[state.count];
       }
+    },
+
+    addOption(state, payload:string[]): void{
+      console.log(payload);
+      state.quickSelectOptions = payload;
     },
 
     decrement(state): void{
@@ -76,10 +99,18 @@ export const store = createStore<State>({
       state.type = 'model';
     },
 
+    callApi(state): void {
+      changeApi(state);
+    },
+
     updateOnboardingValue(state, payload:string) {
       switch (state.dataType) {
         case 'gear': {
           state.tag.gear = payload;
+          break;
+        }
+        case 'talent': {
+          state.tag.talent = payload;
           break;
         }
         case 'model': {
@@ -99,6 +130,10 @@ export const store = createStore<State>({
 
     alterDataType(state, payload:Datatype):void{
       state.dataType = payload;
+    },
+
+    alterCategory(state, payload:string):void{
+      state.category = payload;
     },
 
     alterFlow(state, payload:Flow):void{

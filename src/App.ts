@@ -102,12 +102,17 @@ export default defineComponent({
   },
 
   updated() {
-    if (typeof Object(Pages.screens)[this.$store.state.type].buttonClick !== 'undefined') {
+    const location = this.$store.state.type;
+
+    if (typeof Object(Pages.screens)[location].buttonClick !== 'undefined') {
       console.log('this is undefined');
     }
 
-    const i = Object(Pages.screens)[this.$store.state.type].dataType;
-    this.$store.commit('alterDataType', i);
+    const type = Object(Pages.screens)[location].dataType;
+    this.$store.commit('alterDataType', type);
+    const cat = Object(Pages.screens)[location].apiCategory;
+    this.$store.commit('alterCategory', cat);
+    this.$store.commit('callApi');
   },
 
   beforeUnmount() {

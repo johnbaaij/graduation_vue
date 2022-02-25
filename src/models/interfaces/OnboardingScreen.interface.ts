@@ -14,4 +14,5 @@ export interface OnboardingScreen {
     showTextInputMulti?:ShowComponent;
     buttonClick?: buttonClick;
     dataType:Datatype;
+    apiCategory:string;
 }

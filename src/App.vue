@@ -4,7 +4,7 @@
         <div :key="this.$store.state.count" class="onboardingText"><OnboardingText /></div>
           </transition>
         <form @submit.prevent="checkForm" id ="onboardingForm" class="quickResponseArea">
-          <QuickResponseRadio/><TextInput class ="textInput" v-if="showTextArea" > </TextInput>
+          <QuickResponseRadio/><TextInput :key="this.$store.state.count" class ="textInput" v-if="showTextArea" > </TextInput>
           <ItemSelector v-if="showItemSelector" > </ItemSelector>
           <TextInputMulti v-if="showTextInputMulti"> </TextInputMulti>
         </form>
