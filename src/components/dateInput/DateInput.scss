@@ -1,0 +1,11 @@
+.input{
+    width: $fullWidth;
+    margin-left: $defaultMargin;
+    margin-right: $defaultMargin;
+    height: 48px;
+    font-family: $mainFont;
+    color: $white;
+    background-color: $secondaryBackgroundColor;
+    border-radius: $bdrRadius;
+    border:none;
+}

@@ -1,6 +1,5 @@
 @mixin styled_button {
-    border: none;
-    padding: 15px 32px;
+    padding: 11px 32px;
     text-align: center;
     text-decoration: none;
     display: block;
@@ -8,7 +7,11 @@
     font-family: $titleFont;
     border-radius:$bdrRadius;
     max-width: 172px;
+    max-height: 48px;
     width: calc(50% - $halfMargin);
+    border-color: $mainColor;
+    border-style: solid;
+    border-width: 1px;
 }
 
 @mixin quick_response_wrapper {
@@ -20,7 +23,7 @@
     border: 0;
     align-content: center;
     align-items: center;   
-    margin-right: $defaultMargin;  
+    margin-right: $defaultMargin;
 }
 
 @mixin invisible_radio{
@@ -28,17 +31,20 @@
 }
 
 @mixin quick_response_item {
-    color: black;
+    color: white;
     cursor:pointer;
     display:flex;
     padding-left: 1rem;
     padding-right: 1rem;
     width:fit-content;
-    height:30px;
+    height:40px;
+    border:1px;
+    border-style: solid;
+    border-color: $mainColor;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
-    background: white;
+    border-radius: 0.9rem;
+    background: $secondaryBackgroundColor;
     margin-bottom: 0.5rem;
     user-select: none; /* Standard */
 }
@@ -47,5 +53,6 @@
     &:checked + .selectableArea {
         background: $mainColor;
         -webkit-appearance: none;
+        color:black;
       }
 }

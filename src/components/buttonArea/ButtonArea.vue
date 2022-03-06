@@ -1,7 +1,12 @@
 <template>
-<div id="ButtonArea">
-    <button type='button' @click="back" class="btn" id="back">{{$t("button.back")}}</button>
-    <button @click="clicked" form="onboardingForm" type='submit' class="btn" id="next">{{$t("button.next")}} </button>
+<div :class="{ 'LongButtonArea': longBtnIsActive, 'ButtonArea': !longBtnIsActive }">
+    <button :class="{ 'longButton': longBtnIsActive, 'btn': !longBtnIsActive }"  type='button' @click="back" id="back">
+        {{$t("button.back")}}
+    </button>
+    <button :class="{ 'longButton': longBtnIsActive, 'btn': !longBtnIsActive }"
+   @click="clicked" form="onboardingForm" type='submit' id="next">
+        {{$t("button.next")}}
+</button>
 
 </div>
 </template>

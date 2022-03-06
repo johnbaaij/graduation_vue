@@ -12,7 +12,10 @@ export interface OnboardingScreen {
     showFileInput?:ShowComponent;
     showItemSelector?:ShowComponent;
     showTextInputMulti?:ShowComponent;
+    showDateInput?:ShowComponent;
+    showYearInput?: ShowComponent;
     buttonClick?: buttonClick;
+    hasLongButton?: boolean;
     dataType:Datatype;
     apiCategory:string;
 }

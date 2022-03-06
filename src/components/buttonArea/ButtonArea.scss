@@ -1,13 +1,21 @@
 .btn{
   @include styled_button;
 }
-#ButtonArea{
+.ButtonArea{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-left: $defaultMargin;
-  padding-right: $defaultMargin;
+  // padding-left: $defaultMargin;
+ //  padding-right: $defaultMargin;
 }
+
+.LongButtonArea{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
 
 #next{
     background-color: $mainColor;
@@ -16,9 +24,20 @@
 }
 #back{
     margin-right: $halfMargin;
-    border-width: 1px;
-    border-style: solid;
-    border-color: $mainColor;
     background-color: $backgroundColor;
     color: white;
+}
+
+.longButton{
+    @include styled_button;
+    width: calc(100% - $defaultMargin*2);
+    margin-left: $defaultMargin;
+    margin-right: $defaultMargin;
+    margin-bottom: $defaultMargin;
+    max-width: none;
+
+    button{
+      margin-right: 0 !important;
+      margin-left: 0 !important;
+    }
   }

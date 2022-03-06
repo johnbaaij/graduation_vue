@@ -4,7 +4,7 @@
     {{ item }}
 </option>
 </select>
-  
+
 </template>
 
 <script src="./YearInput.ts" lang="ts"> </script>

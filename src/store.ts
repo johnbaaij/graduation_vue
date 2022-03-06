@@ -24,7 +24,7 @@ function changeApi(state:any) {
   }).then((data) => {
     state.apiResults = data;
     //  state.quickSelectOptions = data.data?.map(({ item }) => item);
-    state.quickSelectOptions = data.data;
+    state.quickSelectOptions = data.data?.slice(0, 7);
   });
   return returnable;
 }
@@ -42,7 +42,8 @@ export interface State {
   apiResults:Gear,
   quickSelectOptions:any,
   buttonEvent:ButtonEvent,
-  nextFlow:Flow
+  nextFlow:Flow,
+  hasLongButton: boolean,
 }
 
 let array: string [];
@@ -71,16 +72,19 @@ export const store = createStore<State>({
     quickSelectOptions: [],
     buttonEvent: { state: true, payload: '' },
     nextFlow: 'basicFlow',
+    hasLongButton: false,
   },
 
   mutations: {
     increment(state): void {
-      const i = state.selectedFlow;
       array = state.flowArray;
       if (state.count < array.length - 1) {
         state.count += 1;
         state.type = array[state.count];
       }
+    },
+    changeLongButtonState(state, payload:boolean): void {
+      state.hasLongButton = payload;
     },
 
     addOption(state, payload:string[]): void{
@@ -151,6 +155,7 @@ export const store = createStore<State>({
 
     changeButtonEvent(state, payload:Flow):void{
       const i:ButtonEvent = { state: true, payload };
+      state.nextFlow = payload;
       state.buttonEvent = i;
     },
   },

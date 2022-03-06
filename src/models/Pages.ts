@@ -52,6 +52,11 @@ export default class Pages {
       almost: reactive<OnboardingScreen>({
         dataType: null,
         apiCategory: '',
+        hasLongButton: true,
+        buttonClick: {
+          changable: true,
+          destination: 'extendedFlow',
+        },
       }),
 
       size: reactive<OnboardingScreen>({
@@ -63,6 +68,7 @@ export default class Pages {
       year: reactive<OnboardingScreen>({
         dataType: 'year',
         apiCategory: '',
+        showYearInput: true,
       }),
 
       serial: reactive<OnboardingScreen>({
@@ -83,11 +89,17 @@ export default class Pages {
         apiCategory: '',
       }),
 
+      material: reactive<OnboardingScreen>({
+        dataType: 'notes',
+        apiCategory: '',
+        showQuickResponseSingle: true,
+      }),
+
       generalItems: reactive<OnboardingScreen>({
         dataType: null,
         showQuickResponseSingle: true,
         showTextArea: true,
-        apiCategory: '',
+        apiCategory: 'items',
       }),
 
       sosRelation: reactive<OnboardingScreen>({
@@ -105,9 +117,32 @@ export default class Pages {
       done: reactive<OnboardingScreen>({
         dataType: null,
         apiCategory: '',
+        hasLongButton: true,
+      }),
+
+      newDate: reactive<OnboardingScreen>({
+        dataType: null,
+        apiCategory: '',
+        showDateInput: true,
+      }),
+
+      oldDate: reactive<OnboardingScreen>({
+        dataType: null,
+        apiCategory: '',
+        showDateInput: true,
+      }),
+
+      keyUsage: reactive<OnboardingScreen>({
+        dataType: null,
+        apiCategory: 'items_keys',
       }),
 
       final: reactive<OnboardingScreen>({
+        dataType: null,
+        apiCategory: '',
+      }),
+
+      dogBreed: reactive<OnboardingScreen>({
         dataType: null,
         apiCategory: '',
       }),

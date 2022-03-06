@@ -1,8 +1,12 @@
 .textField{
-    height: 50px;
+    height: 48px;
     width: $fullWidth;
     border: none;
     margin-left: $defaultMargin;
     margin-right: $defaultMargin;
     border-radius: $bdrRadius;
+}
+
+.text{
+    margin: $defaultMargin;
 }

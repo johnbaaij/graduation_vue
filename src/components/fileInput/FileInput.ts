@@ -18,6 +18,7 @@ const Component = defineComponent({
     onFileSelected(event:any): void{
       const selectedFile = event.target.files[0];
       this.url = URL.createObjectURL(selectedFile);
+      console.log(this.url);
     },
 
   },

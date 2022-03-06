@@ -7,6 +7,6 @@ import i18n from './i18n';
 
 initJsStore();
 createApp(App)
+  .use(store)
   .use(i18n)
-  .use(store, key)
   .mount('#app');

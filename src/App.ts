@@ -1,4 +1,4 @@
-import { defineComponent, onMounted } from 'vue';
+import { computed, defineComponent, onMounted } from 'vue';
 import { Motion, Presence } from 'motion/vue';
 import { useStore } from 'vuex';
 import Pages from './models/Pages';
@@ -17,6 +17,7 @@ import QuickResponseRadio from './components/quickResponseRadio/QuickResponseRad
 import YearInput from './components/yearInput/YearInput.vue';
 import ItemSelector from './components/itemSelector/Itemselector.vue';
 import TextInputMulti from './components/textInputMulti/TextInputMulti.vue';
+import DateInput from './components/dateInput/DateInput.vue';
 // eslint-disable-next-line import/no-named-as-default
 
 function getComponentCondition(type:string) {
@@ -27,10 +28,28 @@ function getComponentCondition(type:string) {
 export default defineComponent({
   setup() {
     const store = useStore();
+    const location = store.state.type;
 
+    const current = computed(() => store.state.count);
+    // form elements
+    const showQuickResponseSingle = computed(() => getComponentCondition(store.state.type).showQuickResponseSingle);
+    const showQuickResponseMultiple = computed(() => getComponentCondition(store.state.type).showQuickResponseMultiple);
+    const showTextArea = computed(() => getComponentCondition(store.state.type).showTextArea);
+    const showFileInput = computed(() => getComponentCondition(store.state.type).showFileInput);
+    const showItemSelector = computed(() => getComponentCondition(store.state.type).showItemSelector);
+    const showTextInputMulti = computed(() => getComponentCondition(store.state.type).showTextInputMulti);
+    const showDateInput = computed(() => getComponentCondition(store.state.type).showDateInput);
     return {
       flowSelect: () => store.commit('setPage'),
-
+      location,
+      current,
+      showQuickResponseSingle,
+      showQuickResponseMultiple,
+      showTextArea,
+      showFileInput,
+      showItemSelector,
+      showTextInputMulti,
+      showDateInput,
     };
   },
   components: {
@@ -47,15 +66,7 @@ export default defineComponent({
     YearInput,
     ItemSelector,
     TextInputMulti,
-  },
-
-  props: {
-  },
-
-  data() {
-    return {
-
-    };
+    DateInput,
   },
 
   methods: {
@@ -70,42 +81,17 @@ export default defineComponent({
 
   },
 
-  computed: {
-
-    current() {
-      return this.$store.state.count;
-    },
-
-    showQuickResponseSingle() {
-      return getComponentCondition(this.$store.state.type).showQuickResponseSingle;
-    },
-
-    showQuickResponseMultiple() {
-      return getComponentCondition(this.$store.state.type).showQuickResponseMultiple;
-    },
-
-    showTextArea() {
-      return getComponentCondition(this.$store.state.type).showTextArea;
-    },
-
-    showFileInput() {
-      return getComponentCondition(this.$store.state.type).showFileInput;
-    },
-
-    showItemSelector() {
-      return getComponentCondition(this.$store.state.type).showItemSelector;
-    },
-
-    showTextInputMulti() {
-      return getComponentCondition(this.$store.state.type).showTextInputMulti;
-    },
-  },
-
   updated() {
     const location = this.$store.state.type;
 
-    if (typeof Object(Pages.screens)[location].buttonClick !== 'undefined') {
-      console.log('this is undefined');
+    if (getComponentCondition(location).buttonClick?.changable) {
+      this.$store.commit('changeButtonEvent', getComponentCondition(this.$store.state.type).buttonClick.destination);
+    }
+
+    if (getComponentCondition(location).hasLongButton) {
+      this.$store.commit('changeLongButtonState', true);
+    } else {
+      this.$store.commit('changeLongButtonState', false);
     }
 
     const type = Object(Pages.screens)[location].dataType;

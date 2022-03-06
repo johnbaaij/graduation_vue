@@ -49,7 +49,7 @@ export default defineComponent({
       let matches = 0;
       this.$store.commit('addOption', list);
       return values.filter((item:any) => {
-        if (item.item.toLowerCase().includes(this.searchTerm.toLowerCase()) && matches < 6) {
+        if (item.item.toLowerCase().includes(this.searchTerm.toLowerCase())) {
           // eslint-disable-next-line no-plusplus
           matches++;
           list.push(item);

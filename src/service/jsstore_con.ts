@@ -1,3 +1,4 @@
+/* eslint-disable import/no-webpack-loader-syntax */
 /* eslint-disable global-require */
 
 // TODO 'This needs to be checked to see if it only triggers once'

@@ -20,7 +20,7 @@ const Component = defineComponent({
 
   methods: {
     updateMessage(e:any) {
-      if (this.title?.flow !== undefined) {
+      if (this.title?.flow !== undefined && this.title?.flow !== null) {
         this.$store.commit('setNextFlow', this.title?.flow);
         this.$store.commit('changeButtonEvent', this.title?.flow);
       }

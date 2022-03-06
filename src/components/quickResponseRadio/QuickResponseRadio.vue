@@ -1,4 +1,5 @@
 <template>
+    <h4 class="text">Choose a suggestion</h4>
     <div class="wrapper">
         <QuickResponseItem  v-for="item in items" :key="item" :title ="item"></QuickResponseItem>
     </div>

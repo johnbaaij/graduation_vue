@@ -1,5 +1,7 @@
 <template>
-  <input autocomplete="off" placeholder="Type here..." v-model="searchTerm" type="text" class="textField" name="fname">
+    <h4 class="text">Or add something yourself</h4>
+
+  <input autocomplete="off" placeholder="Or filter your options" v-model="searchTerm" type="text" class="textField" name="fname">
 
   <ul>
   <li

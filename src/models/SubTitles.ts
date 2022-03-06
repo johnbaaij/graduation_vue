@@ -1,26 +1,32 @@
+import { reactive } from 'vue';
 import i18n from '@/i18n';
+import { store } from '../store';
+
 import TranslatableItemsInterface from './interfaces/TranslatableItems.interface';
 
-const text = i18n.global.t;
-
 const subTitles:TranslatableItemsInterface = {
-  talentpool: text('talentpool.text'),
-  gear: text('gear.text'),
-  brand: text('brand.text'),
-  model: text('model.text'),
-  picture: text('picture.text'),
-  almost: text('almost.text'),
-  serial: text('serial.text'),
-  year: text('year.text'),
-  size: text('size.text'),
-  receipt: text('receipt.text'),
-  notes: text('notes.text'),
-  done: text('done.text'),
-  itemSelection: text('itemSelection.text'),
-  final: text('final.text'),
-  generalItems: text('generalItems.text'),
-  sosPhone: text('sosPhone.text'),
-  sosRelation: text('sosRelation.text'),
+  talentpool: i18n.global.t('talentpool.text'),
+  gear: reactive<any>(i18n.global.t('gear.text', { talent: store.state.tag.talent })),
+  brand: i18n.global.t('brand.text'),
+  model: i18n.global.t('model.text'),
+  picture: i18n.global.t('picture.text'),
+  almost: i18n.global.t('almost.text'),
+  serial: i18n.global.t('serial.text'),
+  year: i18n.global.t('year.text'),
+  size: i18n.global.t('size.text'),
+  receipt: i18n.global.t('receipt.text'),
+  notes: i18n.global.t('notes.text'),
+  done: i18n.global.t('done.text'),
+  itemSelection: i18n.global.t('itemSelection.text'),
+  final: i18n.global.t('final.text'),
+  generalItems: i18n.global.t('generalItems.text'),
+  sosPhone: i18n.global.t('sosPhone.text'),
+  sosRelation: i18n.global.t('sosRelation.text'),
+  oldDate: i18n.global.t('oldDate.text'),
+  newDate: i18n.global.t('newDate.text'),
+  keyUsage: i18n.global.t('keyUsage.text'),
+  dogBreed: i18n.global.t('dogBreed.text'),
+  material: i18n.global.t('material.text'),
 };
 
 export default subTitles;

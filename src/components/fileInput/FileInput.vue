@@ -1,14 +1,11 @@
 <!-- TODO: https://developer.mozilla.org/en-US/docs/Web/API/FileReader -->
 
 <template>
-
-    <img v-if="url" :src="url" />
-
     <div class="photoArea">
         <label v-if="displayPhoto" class="photoButton">
             <input type="file"
             accept="image/*" @change="onFileSelected" >
-            <img id="photoImage" class="logo" src="../../../src/assets/white.svg" alt="">
+            <img id="photoImage" class="logo" src="../../../src/assets/Group.svg" alt="">
             Choose photo
         </label>
 
@@ -17,8 +14,8 @@
             accept="image/*, application/pdf ">
             <img id="photoImage" class="logo" src="../../../src/assets/white.svg" alt="">
             Choose file
-        </label>  
-    </div>        
+        </label>
+    </div>
 </template>
 
 <script src="./FileInput.ts" lang="ts" >

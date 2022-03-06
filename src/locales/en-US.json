@@ -27,85 +27,6 @@
     "title": "(Almost) Protected",
     "text": "Booom your product is registered"
   },
-  "sports": [
-    {
-      "name": "Kitesurfing",
-      "gear": [
-        {
-          "type": "Wetsuits",
-          "manufacturers": [
-            "Xcel",
-            "Vissla",
-            "Quicksilver",
-            "O'Neil",
-            "Patagonia",
-            "Rip Curl",
-            "Sisstrevolution"
-          ]
-        },
-        {
-          "type": "Boards",
-          "manufacturers": [
-            "Airrush",
-            "Appletree,",
-            "Brunotti",
-            "Cabrinha",
-            "Carved Kiteboards",
-            "Core kiteboarding",
-            "Duotone Kiteboarding",
-            "F-one",
-            "Firewire",
-            "Flysurfer",
-            "Kold Shapes",
-            "Lieuwe",
-            "Naish",
-            "North",
-            "Ozone",
-            "Reeding kiteboarding",
-            "Slingshot"
-          ]
-        },
-        {
-          "type": "Kites",
-          "manufacturers": [
-            "Airrush",
-            "Appletree,",
-            "Brunotti",
-            "Cabrinha",
-            "Carved Kiteboards",
-            "Core kiteboarding",
-            "Duotone Kiteboarding",
-            "F-one",
-            "Firewire",
-            "Flysurfer",
-            "Kold Shapes",
-            "Lieuwe",
-            "Naish",
-            "North",
-            "Ozone",
-            "Reeding kiteboarding",
-            "Slingshot"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Snowboarding",
-      "gear": []
-    },
-    {
-      "name": "Surfing",
-      "gear": []
-    },
-    {
-      "name": "Skiing",
-      "gear": []
-    },
-    {
-      "name": "Scuba diving",
-      "gear": []
-    }
-  ],
   "serial": {
     "title": "Serial"
   },
@@ -113,7 +34,8 @@
     "title": "Year"
   },
   "size": {
-    "title": "Size"
+    "title": "Size",
+    "text": "What't the size of your"
   },
   "receipt": {
     "title": "Receipt"
@@ -121,5 +43,25 @@
   "notes": {
     "title": "Notes",
     "text": "Anything you'll like to add?"
+  },
+  "itemSelection": {
+    "title": "Let's go!",
+    "text": "Grab your product, grab your product and let's protect it"
+  },
+  "oldDate": {
+    "title": "Acquire"
+  },
+  "newDate": {
+    "title": "Expire"
+  },
+  "generalItems": {
+    "title": "What are you gonna add?"
+  },
+  "done": {
+    "title": "Booom",
+    "text": "You're all set"
+  },
+  "dogBreed": {
+    "title": "Breed"
   }
 }

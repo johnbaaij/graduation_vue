@@ -9,7 +9,7 @@ const Component = defineComponent({
   },
   data() {
     return {
-      uid: "",
+      uid: '',
     };
   },
 
@@ -18,13 +18,13 @@ const Component = defineComponent({
   },
 
   methods: {
-    updateMessage (e:any) {
-      this.$store.commit('updateOnboardingValue', e.target.value)
-    }
+    updateMessage(e:any) {
+      this.$store.commit('updateOnboardingValue', e.target.value);
+    },
   },
-  
+
   mounted() {
-    this.uid = "checkbox" +  Date.now() * Math.random() ;
+    this.uid = `checkbox${Date.now() * Math.random()}`;
   },
 });
 
