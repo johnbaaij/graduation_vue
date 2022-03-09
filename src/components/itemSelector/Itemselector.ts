@@ -1,5 +1,11 @@
 import { defineComponent } from 'vue';
 
+// svg files
+import gloveSVG from '@/svg/glove.svg.vue';
+import skateSVG from '@/svg/skate.svg.vue';
+import skiShoeSVG from '@/svg/ski_shoe.svg.vue';
+import skiSVG from '@/svg/ski.svg.vue';
+
 const Component = defineComponent({
 
   setup() {
@@ -9,6 +15,10 @@ const Component = defineComponent({
   },
 
   components: {
+    gloveSVG,
+    skateSVG,
+    skiShoeSVG,
+    skiSVG,
   },
 
   props: {
@@ -21,13 +31,11 @@ const Component = defineComponent({
   methods: {
     triggerSport(e:any) {
       if (e.target.value === 'sport') {
-        console.log('sport');
         this.$store.commit('setNextFlow', 'basicFlow');
       }
     },
     triggerGeneral(e:any) {
       if (e.target.value === 'general') {
-        console.log('general');
         this.$store.commit('setNextFlow', 'generalFlow');
       }
     },

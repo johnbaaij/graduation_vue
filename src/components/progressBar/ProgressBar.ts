@@ -14,8 +14,9 @@ const Component = defineComponent({
 
   computed: {
     width() {
+      const k = Flows.items.extendedFlow.length / this.$store.state.flowArray.length;
       const number = 100 / (Flows.items.basicFlow.length);
-      return (this.$store.state.count + 1) * number;
+      return (this.$store.state.count + 1) * number * k;
     },
 
   },

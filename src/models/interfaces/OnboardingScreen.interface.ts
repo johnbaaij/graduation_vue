@@ -6,6 +6,8 @@ interface buttonClick {
 }
 
 export interface OnboardingScreen {
+    title: string;
+    subTitle: string;
     showQuickResponseSingle?: ShowComponent;
     showQuickResponseMultiple?: ShowComponent;
     showTextArea?: ShowComponent;

@@ -6,8 +6,8 @@
         <form @submit.prevent="checkForm" id ="onboardingForm" class="quickResponseArea">
             <transition name="slide-fade"><QuickResponseRadio v-if="showQuickResponseSingle"></QuickResponseRadio></transition>
             <transition name="slide-fade"><TextInput :key="this.$store.state.count" class ="textInput" v-if="showTextArea" > </TextInput></transition>
-            <transition name="slide-fade"><ItemSelector v-if="showItemSelector" > </ItemSelector></transition>
-            <transition name="slide-fade"><TextInputMulti v-if="showTextInputMulti"> </TextInputMulti></transition>
+            <ItemSelector v-if="showItemSelector" > </ItemSelector>
+            <TextInputMulti v-if="showTextInputMulti"> </TextInputMulti>
             <transition name="slide-fade"><DateInput v-if="showDateInput"> </DateInput></transition>
         </form>
         <div class="fileInput"><FileInput v-if="showFileInput" /></div>

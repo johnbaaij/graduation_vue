@@ -1,5 +1,5 @@
 <template>
-    <input @input="updateMessage" v-model="message" :value="{item: test.item}"
+    <input @input="updateMessage" :value="{item: test.item}"
      v-bind="{ id: uid}" type="radio" name="radio" class="invisible-radio">
     <label class="selectableArea" v-bind="{ for: uid}">{{title.item}}</label>
 </template>

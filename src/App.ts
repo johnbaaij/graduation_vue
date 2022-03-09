@@ -2,7 +2,6 @@ import { computed, defineComponent, onMounted } from 'vue';
 import { Motion, Presence } from 'motion/vue';
 import { useStore } from 'vuex';
 import Pages from './models/Pages';
-import OnboardingController from './controllers/OnboardingController';
 import { buttonEventClick } from './controllers/FlowSwitcher';
 
 // vue components
@@ -18,7 +17,6 @@ import YearInput from './components/yearInput/YearInput.vue';
 import ItemSelector from './components/itemSelector/Itemselector.vue';
 import TextInputMulti from './components/textInputMulti/TextInputMulti.vue';
 import DateInput from './components/dateInput/DateInput.vue';
-// eslint-disable-next-line import/no-named-as-default
 
 function getComponentCondition(type:string) {
   const i = Object(Pages.screens)[type];
@@ -67,6 +65,8 @@ export default defineComponent({
     ItemSelector,
     TextInputMulti,
     DateInput,
+
+    // svg files
   },
 
   methods: {
@@ -99,16 +99,5 @@ export default defineComponent({
     const cat = Object(Pages.screens)[location].apiCategory;
     this.$store.commit('alterCategory', cat);
     this.$store.commit('callApi');
-  },
-
-  beforeUnmount() {
-    const data = {
-      gear: 'test',
-      brand: 'test2',
-      model: 'test3',
-    };
-    const controller = new OnboardingController();
-    controller.onboardingSafe(data);
-    console.log('this runs');
   },
 });
