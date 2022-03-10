@@ -1,0 +1,12 @@
+{
+    "name": "onboarding",
+    "columns": {
+      "id": {
+        "primaryKey": true,
+        "autoIncrement": false
+      }, 
+      "gear": {"dataType": "string"},
+      "brand":{"dataType": "string"},
+      "model":{"dataType": "string"}
+    }
+}

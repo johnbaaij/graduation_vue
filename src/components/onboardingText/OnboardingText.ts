@@ -1,31 +1,23 @@
-import { defineComponent } from 'vue';
-import titles from '@/models/Titles';
-import subTitles from '@/models/SubTitles';
-
-// this function gets a value from the Vuex state and passes it through the object to get the proper title
-function getTitle(type:string) {
-  const i = Object(titles)[type];
-  return (i);
-}
-
-// this function gets a value from the Vuex state and passes it through the object to get the proper description/subtitle
-function getText(type:string) {
-  const i = Object(subTitles)[type];
-  return (i);
-}
+import { computed, defineComponent } from 'vue';
+import { useStore } from 'vuex';
 
 const Component = defineComponent({
-  props: {
+
+  setup() {
+    const store = useStore();
+    const talent = computed(() => store.state.tag.talent);
+    const gear = computed(() => store.state.tag.gear);
+
+    return {
+      talent,
+      gear,
+    };
   },
 
-  computed: {
-    heading() {
-      return getTitle(this.$store.state.type);
-    },
-
-    text() {
-      return getText(this.$store.state.type);
-    },
+  props: ['titleText', 'subtitleText'],
+  data() {
+    return {
+    };
   },
 });
 

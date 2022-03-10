@@ -1,7 +1,7 @@
 <template>
     <div class="header"><Header/></div>
           <transition name="slide-fade">
-        <div :key="this.$store.state.count" class="onboardingText"><OnboardingText /></div>
+        <div :key="this.$store.state.count" class="onboardingText"><OnboardingText :title-text="title" :subtitle-text="subTitle" /> </div>
           </transition>
         <form @submit.prevent="checkForm" id ="onboardingForm" class="quickResponseArea">
             <transition name="slide-fade"><QuickResponseRadio v-if="showQuickResponseSingle"></QuickResponseRadio></transition>

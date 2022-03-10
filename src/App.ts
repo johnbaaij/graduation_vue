@@ -1,4 +1,4 @@
-import { computed, defineComponent, onMounted } from 'vue';
+import { computed, defineComponent } from 'vue';
 import { Motion, Presence } from 'motion/vue';
 import { useStore } from 'vuex';
 import Pages from './models/Pages';
@@ -37,6 +37,9 @@ export default defineComponent({
     const showItemSelector = computed(() => getComponentCondition(store.state.type).showItemSelector);
     const showTextInputMulti = computed(() => getComponentCondition(store.state.type).showTextInputMulti);
     const showDateInput = computed(() => getComponentCondition(store.state.type).showDateInput);
+    const title = computed(() => getComponentCondition(store.state.type).title);
+    const subTitle = computed(() => getComponentCondition(store.state.type).subTitle);
+
     return {
       flowSelect: () => store.commit('setPage'),
       location,
@@ -48,6 +51,8 @@ export default defineComponent({
       showItemSelector,
       showTextInputMulti,
       showDateInput,
+      title,
+      subTitle,
     };
   },
   components: {

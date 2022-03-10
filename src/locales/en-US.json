@@ -17,7 +17,7 @@
   },
   "model": {
     "title": "Model",
-    "text": "What's the model for your {category}?"
+    "text": "What's the model of your {category}?"
   },
   "picture": {
     "title": "Picture time",
@@ -46,7 +46,7 @@
   },
   "itemSelection": {
     "title": "Let's go!",
-    "text": "Grab your product, grab your product and let's protect it"
+    "text": "Grab your product, grab your booomtag and let's protect it"
   },
   "oldDate": {
     "title": "Acquire"

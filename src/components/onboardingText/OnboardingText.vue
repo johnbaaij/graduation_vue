@@ -1,7 +1,7 @@
 <template>
 <div id="textArea">
-    <h1 class="heading">{{heading}} </h1>
-    <p class="text">{{text}}</p>
+    <h1 class="heading">{{ $t(titleText) }} </h1>
+    <p class="text">{{$t(subtitleText, { talent: talent, category: gear }) }}</p>
 </div>
 </template>
 

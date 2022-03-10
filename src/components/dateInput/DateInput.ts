@@ -8,8 +8,8 @@ export default defineComponent({
     const date = new Date();
 
     const store = useStore();
-    const now = computed(() => date.toLocaleDateString());
-    console.log(now);
+    const now = computed(() => '18-10-1995');
+    console.log(now.value);
 
     return {
       store,

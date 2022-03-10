@@ -1,12 +1,15 @@
 import { reactive } from 'vue';
+import i18n from '../i18n';
 import { OnboardingScreen } from './interfaces/OnboardingScreen.interface';
+import subTitles from './SubTitles';
+import titles from './Titles';
 
 export default class Pages {
-    static readonly screens = {
+    static screens = {
 
       itemSelection: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'itemSelection.title',
+        subTitle: 'itemSelection.text',
         dataType: 'gear',
         showItemSelector: true,
         apiCategory: '',
@@ -14,8 +17,8 @@ export default class Pages {
 
       talentpool: reactive<OnboardingScreen>({
         showQuickResponseSingle: true,
-        title: '',
-        subTitle: '',
+        title: 'talentpool.title',
+        subTitle: 'talentpool.text',
         showTextArea: true,
         dataType: 'talent',
         apiCategory: 'sport',
@@ -23,16 +26,16 @@ export default class Pages {
 
       gear: reactive<OnboardingScreen>({
         showQuickResponseSingle: true,
-        title: '',
-        subTitle: '',
+        title: 'gear.title',
+        subTitle: 'gear.text',
         showTextArea: true,
         dataType: 'gear',
         apiCategory: 'type',
       }),
 
       brand: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'brand.title',
+        subTitle: 'brand.text',
         showQuickResponseSingle: true,
         showTextArea: true,
         dataType: 'brand',
@@ -40,8 +43,8 @@ export default class Pages {
       }),
 
       model: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'model.title',
+        subTitle: 'model.text',
         showQuickResponseSingle: true,
         showTextArea: true,
         dataType: 'model',
@@ -49,23 +52,16 @@ export default class Pages {
       }),
 
       picture: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'picture.title',
+        subTitle: 'picture.text',
         showFileInput: true,
         dataType: null,
         apiCategory: '',
       }),
 
-      empty: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
-        dataType: null,
-        apiCategory: '',
-      }),
-
       almost: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'almost.title',
+        subTitle: 'almost.text',
         dataType: null,
         apiCategory: '',
         hasLongButton: true,
@@ -76,56 +72,56 @@ export default class Pages {
       }),
 
       size: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'size.title',
+        subTitle: 'size.text',
         showTextArea: true,
         dataType: 'size',
         apiCategory: '',
       }),
 
       year: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'year.title',
+        subTitle: 'year.text',
         dataType: 'year',
         apiCategory: '',
         showYearInput: true,
       }),
 
       serial: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'serial.title',
+        subTitle: 'serial.text',
         showTextArea: true,
         dataType: 'serial',
         apiCategory: '',
       }),
 
       receipt: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'receipt.title',
+        subTitle: 'receipt.text',
         showFileInput: true,
         dataType: null,
         apiCategory: '',
       }),
 
       notes: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'notes.title',
+        subTitle: 'notes.text',
         dataType: 'notes',
         showTextInputMulti: true,
         apiCategory: '',
       }),
 
       material: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'material.title',
+        subTitle: 'material.text',
         dataType: 'notes',
         apiCategory: '',
         showQuickResponseSingle: true,
       }),
 
       generalItems: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'generalItems.title',
+        subTitle: 'generalItems.text',
         dataType: null,
         showQuickResponseSingle: true,
         showTextArea: true,
@@ -133,8 +129,8 @@ export default class Pages {
       }),
 
       sosRelation: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'sosRelation.title',
+        subTitle: 'sosRelation.text',
         dataType: null,
         showQuickResponseSingle: true,
         showTextArea: true,
@@ -142,53 +138,53 @@ export default class Pages {
       }),
 
       sosPhone: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'sosPhone.title',
+        subTitle: 'sosPhone.text',
         dataType: null,
         apiCategory: '',
       }),
 
       done: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'done.title',
+        subTitle: 'done.text',
         dataType: null,
         apiCategory: '',
         hasLongButton: true,
       }),
 
       newDate: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'newDate.title',
+        subTitle: 'newDate.text',
         dataType: null,
         apiCategory: '',
         showDateInput: true,
       }),
 
       oldDate: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'oldDate.title',
+        subTitle: 'oldDate.text',
         dataType: null,
         apiCategory: '',
         showDateInput: true,
       }),
 
       keyUsage: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'keyUsage.title',
+        subTitle: 'keyUsage.text',
         dataType: null,
         apiCategory: 'items_keys',
       }),
 
       final: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'final.title',
+        subTitle: 'final.text',
         dataType: null,
         apiCategory: '',
       }),
 
       dogBreed: reactive<OnboardingScreen>({
-        title: '',
-        subTitle: '',
+        title: 'dogBreed.title',
+        subTitle: 'dogBreed.text',
         dataType: null,
         apiCategory: '',
       }),

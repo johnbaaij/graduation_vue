@@ -6,7 +6,7 @@ import TranslatableItemsInterface from './interfaces/TranslatableItems.interface
 
 const subTitles:TranslatableItemsInterface = {
   talentpool: i18n.global.t('talentpool.text'),
-  gear: reactive<any>(i18n.global.t('gear.text', { talent: store.state.tag.talent })),
+  gear: i18n.global.t('gear.text', { talent: store.state.tag.talent }),
   brand: i18n.global.t('brand.text'),
   model: i18n.global.t('model.text'),
   picture: i18n.global.t('picture.text'),

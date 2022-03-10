@@ -1,4 +1,5 @@
 import { Datatype, Flow, ShowComponent } from '../Types';
+import { TransLatableSubtitle, TranslatableTitle } from '../types/TranslatableItems.Type';
 
 interface buttonClick {
     changable: boolean,
@@ -6,8 +7,8 @@ interface buttonClick {
 }
 
 export interface OnboardingScreen {
-    title: string;
-    subTitle: string;
+    title: TranslatableTitle;
+    subTitle: TransLatableSubtitle;
     showQuickResponseSingle?: ShowComponent;
     showQuickResponseMultiple?: ShowComponent;
     showTextArea?: ShowComponent;

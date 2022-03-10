@@ -110,19 +110,19 @@ export const store = createStore<State>({
     updateOnboardingValue(state, payload:string) {
       switch (state.dataType) {
         case 'gear': {
-          state.tag.gear = payload;
+          state.tag.gear = payload.toLowerCase();
           break;
         }
         case 'talent': {
-          state.tag.talent = payload;
+          state.tag.talent = payload.toLowerCase();
           break;
         }
         case 'model': {
-          state.tag.model = payload;
+          state.tag.model = payload.toLowerCase();
           break;
         }
         case 'brand': {
-          state.tag.brand = payload;
+          state.tag.brand = payload.toLowerCase();
           break;
         }
         default: {
